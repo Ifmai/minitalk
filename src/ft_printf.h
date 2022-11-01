@@ -6,7 +6,7 @@
 /*   By: hozdemir <hozdemir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:46:41 by hozdemir          #+#    #+#             */
-/*   Updated: 2022/10/18 09:48:55 by hozdemir         ###   ########.fr       */
+/*   Updated: 2022/11/01 12:38:15 by hozdemir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-# include "../libft/libft.h"
+# include "../ft_print/libft/libft.h"
 
 typedef struct t_listt
 {
