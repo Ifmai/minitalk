@@ -56,18 +56,22 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra -g
 RM = rm -rf
 LIBC = ar -rcs
+client = client
+server = server
 
 all: ${NAME}
 
 ${NAME}: ${OBJS}
 	@${LIBC} ${NAME} ${OBJS}
+	@${CC} client.c ${NAME} -o ${client}
+	@${CC} server.c ${NAME} -o ${server}
 	@echo "<3 :3 uWu <3 :3"
 
 .c.o:
 	@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 clean:
-	@${RM} ${OBJS} ${OBJS_B}
+	@${RM} ${OBJS} ${OBJS_B} ${client} ${server}
 
 fclean: clean
 	@${RM} ${NAME} ${bonus}
