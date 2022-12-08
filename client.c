@@ -6,7 +6,7 @@
 /*   By: hozdemir <hozdemir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 12:45:47 by hozdemir          #+#    #+#             */
-/*   Updated: 2022/12/08 12:51:44 by hozdemir         ###   ########.fr       */
+/*   Updated: 2022/12/08 13:07:01 by hozdemir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,16 +72,16 @@ int	main(int ac, char **av)
 	int		pid;
 	int		client_pid;
 
-	client_pid = getpid();
-	i = 0;
-	pid = ft_atoi(av[1]);
-	send_pid(client_pid, pid);
-	signal(SIGUSR1, bravo);
 	if (ac != 3)
 	{
 		ft_printf("./client <SERVER PID> [MESSAGE]");
 		exit(0);
 	}
+	client_pid = getpid();
+	i = 0;
+	pid = ft_atoi(av[1]);
+	send_pid(client_pid, pid);
+	signal(SIGUSR1, bravo);
 	while (av[2][i])
 	{
 		send_signal(av[2][i], pid);
